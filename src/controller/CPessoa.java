@@ -35,7 +35,7 @@ public class CPessoa {
      * @param p
      */
     public void removePessoa(Pessoa p) {
-        this.removePessoa(p);
+        this.pessoas.remove(p);
     }
 
     public ArrayList<Pessoa> getPessoas() {
