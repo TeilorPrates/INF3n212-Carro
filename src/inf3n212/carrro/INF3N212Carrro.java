@@ -26,10 +26,72 @@ public class INF3N212Carrro {
         // TODO code application logic here
         cadPessoa.mockPessoas();
         cadCarro.mockCarros();
+        int opM = 99;
+        int opSM = 99;
 
-        System.out.println(cadPessoa.getPessoas());
-        System.out.println("---");
-        System.out.println(cadCarro.getCarros());
+        do {
+            System.out.println("--Sistema de Cadastro--");
+            menuP();
+            opM = leiaNumInt();
+            switch (opM) {
+                case 1:
+                case 2:
+                    do {
+                        subMenu(opM);
+                        opSM = leiaNumInt();
+                        switch (opSM) {
+                            case 1:
+                                System.out.println("--Cadastrar--");
+                                if (opM==1) {
+                                    cadastrarPessoa();
+                                    
+                                }else{
+                                    cadastrarCarro();
+                                }
+                                break;
+                            case 2:
+                                System.out.println("--Edita--");
+                                if (opM==1) {
+                                    editarCarro();
+                                    
+                                }else{
+                                    editarCarro();
+                                }
+                                break;
+                            case 3:
+                                System.out.println("--Lista--");
+                                if (opM==1) {
+                                    listarCarro();
+                                    
+                                }else{
+                                    listarCarro();
+                                }
+                                break;
+                            case 4:
+                                System.out.println("--Deleta--");
+                                if (opM==1) {
+                                    deletarCarro();
+                                    
+                                }else{
+                                    deletarCarro();
+                                }
+                                break;
+                            case 0:
+                                break;
+
+                            default:
+                                System.out.println("Opção inválida,tente novamente!");
+                        }
+                    } while (opSM !=0);
+                    break;
+                case 0:
+                    System.out.println("Aplicação encerrada pelo usuário!");
+                    break;
+                default:
+                    System.out.println("Opção inválida,tente novamente!");
+            }
+        } while (opM != 0);
+
     }//fim métoda main
 
     public static int leiaNumInt() {
@@ -43,7 +105,7 @@ public class INF3N212Carrro {
         return 99;
     }
 
-    public static void menu() {
+    public static void menuP() {
         System.out.println("--Menu Principal--");
         System.out.println("1 - Ger.Pessoa");
         System.out.println("2 - Ger.Carro");
@@ -67,5 +129,26 @@ public class INF3N212Carrro {
         System.out.println("0 - Voltar");
         System.out.print("Digite aqui:");
     }//fim subMenu
+
+     private static void cadastrarPessoa() {
+         System.out.println("Pessoa");
+    }
+
+    private static void cadastrarCarro() {
+        System.out.println("Carro");
+    }
+
+
+    private static void editarCarro() {
+        System.out.println("Macaco");
+    }
+
+    private static void listarCarro() {
+        System.out.println("Alcool");
+    }
+
+    private static void deletarCarro() {
+        System.out.println("Jonas");
+    }
 
 }//fim classe
